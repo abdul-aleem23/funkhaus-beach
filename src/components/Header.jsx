@@ -65,7 +65,7 @@ export default function Header() {
             className="md:hidden fixed left-0 right-0 z-50 rounded-lg py-4 px-4 mx-4" 
             style={{ 
               backgroundColor: '#FEDD00',
-              top: '100px'
+              top: '120px'
             }}
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -74,7 +74,7 @@ export default function Header() {
           >
             <motion.a 
               href="#contact" 
-              className="block py-2 text-base font-medium transition-colors duration-300"
+              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#contact', 90)
@@ -88,7 +88,7 @@ export default function Header() {
             </motion.a>
             <motion.a 
               href="#about" 
-              className="block py-2 text-base font-medium transition-colors duration-300"
+              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#about', 90)
@@ -102,7 +102,7 @@ export default function Header() {
             </motion.a>
             <motion.a 
               href="#gallery" 
-              className="block py-2 text-base font-medium transition-colors duration-300"
+              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#gallery', 90)
@@ -136,7 +136,7 @@ export default function Header() {
           >
             <motion.a 
               href="#contact" 
-              className="text-white hover:text-[#FEDD00] text-lg lg:text-xl font-medium transition-colors duration-300"
+              className="font-akira text-white hover:text-[#FEDD00] text-sm lg:text-base font-normal transition-colors duration-300"
               onClick={(e) => handleSmoothScroll(e, '#contact', 90)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -168,7 +168,7 @@ export default function Header() {
           >
             <motion.a 
               href="#about" 
-              className="text-white hover:text-[#FEDD00] text-lg lg:text-xl font-medium transition-colors duration-300"
+              className="font-akira text-white hover:text-[#FEDD00] text-sm lg:text-base font-normal transition-colors duration-300"
               onClick={(e) => handleSmoothScroll(e, '#about', 90)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
