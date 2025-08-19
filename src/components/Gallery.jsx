@@ -6,24 +6,24 @@ export default function Gallery() {
   
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Beach volleyball court at sunset",
-      caption: "Sunset games at Funkhaus Beach"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Professional volleyball match",
-      caption: "Tournament action on our courts"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Beach volleyball players in action",
-      caption: "Players enjoying the perfect conditions"
+      src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Beach volleyball players jumping to spike",
+      caption: "Professional volleyball training sessions"
     },
     {
       src: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      alt: "Beach volleyball court facilities",
-      caption: "Premium facilities for every player"
+      alt: "Beach volleyball players jumping for the ball",
+      caption: "Dynamic volleyball action and athleticism"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1544441892-794166f1e3be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Beach volleyball team celebrating victory",
+      caption: "Team spirit and tournament victories"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Beach volleyball court with net and sand",
+      caption: "Premium beach volleyball facilities"
     }
   ]
 
