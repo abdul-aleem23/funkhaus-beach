@@ -10,11 +10,11 @@ export default function Header() {
     <>
       {/* Mobile Header - Completely separate, fixed at top */}
       <motion.div 
-        className="md:hidden fixed top-0 left-0 right-0 z-60 flex justify-between items-center w-full px-4 py-3"
+        className="md:hidden fixed top-0 left-0 right-0 z-60 flex justify-between items-center w-full px-6 pt-8 pb-5"
         style={{ 
           background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0) 100%)',
           height: 'auto',
-          minHeight: '80px'
+          minHeight: '100px'
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function Header() {
           <img 
             src={logo} 
             alt="Funkhaus Beach Logo" 
-            className="h-16 w-auto sm:h-20"
+            className="h-20 w-auto sm:h-24"
           />
         </motion.div>
         
@@ -65,7 +65,7 @@ export default function Header() {
             className="md:hidden fixed left-0 right-0 z-50 rounded-lg py-4 px-4 mx-4" 
             style={{ 
               backgroundColor: '#FEDD00',
-              top: '80px'
+              top: '100px'
             }}
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
