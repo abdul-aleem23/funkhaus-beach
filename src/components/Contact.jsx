@@ -18,16 +18,9 @@ export default function Contact() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your interest! We will get back to you soon to discuss collaboration opportunities.')
-    setFormData({
-      businessName: '',
-      contactName: '',
-      email: '',
-      phone: '',
-      notes: ''
-    })
+    // Let Netlify handle the form submission
+    // The form will be submitted naturally without preventDefault
+    // Netlify will redirect to a thank you page or back to the form
   }
 
   return (
@@ -55,16 +48,30 @@ export default function Contact() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
+            {/* Hidden input for Netlify bot detection */}
+            <input type="hidden" name="form-name" value="contact" />
+            <div style={{ display: 'none' }}>
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </div>
             <div>
-              <label htmlFor="businessName" className="block text-sm font-medium mb-2" style={{ color: '#012169' }}>
+              <label htmlFor="business-name" className="block text-sm font-medium mb-2" style={{ color: '#012169' }}>
                 Business Name
               </label>
               <input
                 type="text"
-                id="businessName"
-                name="businessName"
-                value={formData.businessName}
+                id="business-name"
+                name="business-name"
+                defaultValue={formData.businessName}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-opacity-50 bg-white text-black"
@@ -73,14 +80,14 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="contactName" className="block text-sm font-medium mb-2" style={{ color: '#012169' }}>
+              <label htmlFor="contact-name" className="block text-sm font-medium mb-2" style={{ color: '#012169' }}>
                 Contact Name
               </label>
               <input
                 type="text"
-                id="contactName"
-                name="contactName"
-                value={formData.contactName}
+                id="contact-name"
+                name="contact-name"
+                defaultValue={formData.contactName}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-opacity-50 bg-white text-black"
@@ -97,7 +104,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
+                  defaultValue={formData.email}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-opacity-50 bg-white text-black"
@@ -112,7 +119,7 @@ export default function Contact() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.phone}
+                  defaultValue={formData.phone}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-opacity-50 bg-white text-black"
@@ -129,7 +136,7 @@ export default function Contact() {
                 id="notes"
                 name="notes"
                 rows={4}
-                value={formData.notes}
+                defaultValue={formData.notes}
                 onChange={handleChange}
                 placeholder="Tell us about your collaboration ideas, partnership proposals, or any other details..."
                 className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-opacity-50 bg-white text-black"

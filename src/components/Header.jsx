@@ -1,10 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/plogo.svg'
 import { handleSmoothScroll } from '../utils/smoothScroll'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null)
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && 
+          menuRef.current && 
+          !menuRef.current.contains(event.target) &&
+          buttonRef.current &&
+          !buttonRef.current.contains(event.target)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
 
   return (
     <>
@@ -36,6 +56,7 @@ export default function Header() {
         
         {/* Menu Button - Top Right */}
         <motion.button 
+          ref={buttonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-white hover:text-[#FEDD00] p-2 transition-colors duration-300"
           initial={{ opacity: 0, x: 20 }}
@@ -62,6 +83,7 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
+            ref={menuRef}
             className="md:hidden fixed left-0 right-0 z-50 rounded-lg py-4 px-4 mx-4" 
             style={{ 
               backgroundColor: '#FEDD00',
@@ -74,7 +96,7 @@ export default function Header() {
           >
             <motion.a 
               href="#contact" 
-              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
+              className="font-open-sans block py-2 text-sm font-semibold uppercase transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#contact', 90)
@@ -88,7 +110,7 @@ export default function Header() {
             </motion.a>
             <motion.a 
               href="#about" 
-              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
+              className="font-open-sans block py-2 text-sm font-semibold uppercase transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#about', 90)
@@ -102,7 +124,7 @@ export default function Header() {
             </motion.a>
             <motion.a 
               href="#gallery" 
-              className="font-akira block py-2 text-sm font-normal transition-colors duration-300"
+              className="font-open-sans block py-2 text-sm font-semibold uppercase transition-colors duration-300"
               style={{ color: '#012169' }}
               onClick={(e) => {
                 handleSmoothScroll(e, '#gallery', 90)
