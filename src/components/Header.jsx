@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '../assets/plogo.svg'
+import logo from '../assets/logo-one.svg'
 import { handleSmoothScroll } from '../utils/smoothScroll'
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        {/* Logo - Top Left with bigger size and padding */}
+        {/* Logo - Top Left with white color */}
         <motion.div 
           className="flex-shrink-0 pl-2"
           initial={{ opacity: 0, x: -20 }}
@@ -51,6 +51,7 @@ export default function Header() {
             src={logo} 
             alt="Funkhaus Beach Logo" 
             className="h-20 w-auto sm:h-24"
+            style={{ filter: 'brightness(0) invert(1)' }}
           />
         </motion.div>
         
@@ -167,7 +168,7 @@ export default function Header() {
             </motion.a>
           </motion.div>
           
-          {/* Logo - Center */}
+          {/* Logo - Center with white color */}
           <motion.div 
             className="flex-shrink-0"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -178,6 +179,7 @@ export default function Header() {
               src={logo} 
               alt="Funkhaus Beach Logo" 
               className="h-24 w-auto lg:h-32 xl:h-36"
+              style={{ filter: 'brightness(0) invert(1)' }}
             />
           </motion.div>
           

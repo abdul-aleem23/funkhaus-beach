@@ -49,12 +49,12 @@ export default function Gallery() {
             Experience Our Courts
           </h2>
           <p className="font-open-sans text-xl text-gray-700 max-w-2xl mx-auto">
-            Take a virtual tour of our world-class beach volleyball facilities
+            Take a virtual tour, We have 7 indoor and 2 outdoor courts right by the spree !
           </p>
         </motion.div>
 
         <motion.div 
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-2xl md:max-w-5xl lg:max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -66,7 +66,7 @@ export default function Gallery() {
                 key={currentImage}
                 src={images[currentImage].src}
                 alt={images[currentImage].alt}
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full h-64 md:h-[500px] lg:h-[600px] object-cover"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
