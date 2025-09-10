@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { handleSmoothScroll } from '../utils/smoothScroll'
 import { useState, useEffect } from 'react'
+import videoSrc from '../assets/padelhaus-2-desktop.mp4'
 import ReactPlayer from 'react-player'
 
 export default function Hero() {
@@ -46,7 +47,7 @@ export default function Hero() {
           setVideoError(true)
         }}
       >
-        <source src="/padelhaus-2-desktop.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
       </video>
       
       {/* Fallback background image */}
